@@ -1,0 +1,7 @@
+Matplotlib Tutorial
+
+What is Matplotlib is a low level grapgh plotting library in python that serves as a visualization ultility.
+
+Matplotlib was created by John D. Hunter
+
+Matplotlib

@@ -1,0 +1,11 @@
+Numpy Random Syntax
+
+
+from numpy import random
+
+
+
+x = random.radint(100)
+
+
+
