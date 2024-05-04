@@ -1,0 +1,472 @@
+Numpy Syntax
+
+What is numpy?
+
+Numpy is a Python library used for working with arrays
+
+It also has functions for working in domain of linear algebra, fourier transform, and matrices.
+
+Numpy was created in 2005 by Travis Oliphant.  It is an open source project and you can use it freely.
+
+Numpy stands for Numercial Python.
+
+Why Use Numpy?
+
+In Python, we have lists that serve the purpose of arrays, but they are slow in the process.
+
+NumPy aims to provide an array object that is up to 50x faster than traditional Python lists.
+
+the array object in NumPy is called ndarray, it provides a lot of supporting functions that makes working with ndarray very easy.
+
+Arrays are very fequently used in data sciene, where speed and resources are very important.
+
+Data Science: is a branch of computer science where we study how to store, use and analyze data for deriving information from it.
+
+Why is Numpy Faster Than Lists
+
+Numerical Python arrays are stored at one continuous place in memory unlike lists, so processes can access and maniplulate them very efficiently.
+
+This behaviour is called locality of referance in computer science.
+
+this is the main reason why NumPy is faster than lists.  Also it is optimized to work woth the lastest CPU architectures.
+
+Which Language is NumPy written in?
+
+Numercial Python(numpy) is a Python Library and is written partially in Python, but most of the parts that require fast computation are written in C or C++.
+
+Numpy - Getting Started
+
+Import Numpy
+
+once NumPy is installed, you can import it in your code by using the import keyword
+
+Example:
+import numpy
+
+Now Numpy is ready to use!
+
+Now let us write our first ndarray:
+
+import numpy
+
+arr = numpy.array([1,2,3,4,5])
+
+print(arr)
+
+
+Importing numpy as np
+
+NumPy is usually imported under the clause np (the numpy alias*)
+
+*Alias:  In Python alias is an alternate name forreffering to the same thing.
+
+Example: Create a alias woith the as keyword while importing
+
+
+import numpy as np
+
+arr = np.array([1,2,3,4,5])
+
+print(arr)
+
+Now the NumPy package can be referred to as np instead of numpy.
+
+Checking NumPy Version
+The version string is stored under __version__ attribute.
+
+
+import numpy as np
+
+print(np.__version__)
+
+Numpy Creating Arrays
+
+Create a Numpy ndarray Object.
+
+Numpy is used to work with arrays.  The array object in Numerical Python (NumPy) is called ndarray.
+
+We can create a NumPy ndarrray object by using the array() function.
+
+Example: import numpoy as np
+
+arr = np.array([1,2,3,4,5])
+
+print(arr)
+
+print(type(arr))
+
+#The Result
+[1 2 3 4 5]
+<class 'numpy.ndarray'>
+
+type(): This built-in Python function tells us the type of the object passed to it. Like in above code it shows that arr is numpy.ndarray type.
+
+To create an ndarray, we can pass a list, tuple or any array-like object into the array() method, and it will be converted into an ndarray:
+
+Example:  use a tuple the create a Numerical Python Array
+
+import numpy as np
+
+arr = np.array((1,2,3,4))
+
+print(arr)
+
+Dimensions in Arrays
+
+A dimension in ndarrays are one level of array depth (nested arrays).
+
+nested array: are arrays that have arrays as their elements.
+
+think of dimensions in linear algebra.  the dimension of arrays in NumPy are basically how many nested arrays you have in your full ndarray similar to the dimension being how many column vectors you have within your matrix.
+
+0-D Arrays
+
+0-D arrays, or scalars, are equal to a singular entry value as an array.  Each value in any array (whether nested or not) is a 0-D array.
+
+Example
+
+Create a 0-D array with value 42
+
+import numpy as np
+
+arr = np.array(42)
+
+print(arr)
+
+#the result
+42
+
+1-D arrays
+
+An array that has a 0-D arrays as it elements is called uni-dimensional ora 1-D array.
+
+These are the most common and the most basic of arrays.
+Think of linear algebra, 1-D matrices, are also known as (column) vectors.
+so apply the same logic here.  No matter how many elements you add to the array, it will still be a n dimensional vector, or a matrix of dimension 1.
+In this case, your ndarray will be of the property 1-D no matter how many elements are added to your 1-D array. 
+
+
+Example
+Create a 1-D array containing the values 1,2,3,4,5:
+
+import numpy as np
+
+arr = np.array([1,2,3,4,5])
+
+print(arr)
+
+2-D arrays
+An array that has 1-D arrays as its elements is called a 2-D array.
+
+These are often used to represent matrices or 2nd order tensors.
+
+Numpy has a whole sub module deducated towards matrix operations call numpy.mat
+
+Example: Create a 2-D array containing two arrays with the values 1,2,3 and 4,5,6.
+
+import numpy as np
+
+arr = np.array([1,2,3],[4,5,6])
+
+print(arr)
+
+#The Result:
+[[1 2 3]
+ [4 5 6]]
+
+3-D arrays
+
+An array that has 2-D arrays (matrices) as it's elements is called a 3-D array.
+
+These are often used to represent a 3rd order tensor.
+
+Example:Create a 3-D array with two 2-D arrays, both containing two arrays with the values 1,2,3 and 4,5,6.
+
+import numpy as np
+
+arr = np.array([[1,2,3],[4,5,6]],[[1,2,3],[4,5,6]])
+
+print(arr)
+
+Check Number of Dimensions?
+
+NumPy Arrays provides the ndim attribute that returns an integer that tells us how many demnsionions the array have.
+
+Example: Check how many dimensions the arrays have.
+
+import numpy as np
+
+a = np.array(42)
+b = np.array([1, 2, 3, 4, 5])
+c = np.array([[1, 2, 3], [4, 5, 6]])
+d = np.array([[[1, 2, 3], [4, 5, 6]], [[1, 2, 3], [4, 5, 6]]])
+
+print(a.ndim)
+print(b.ndim)
+print(c.ndim)
+print(d.ndim)
+
+Higher Dimensional Arrays
+
+An array can have any number of dimensions
+
+When the array is created you can define the number of dimensions by using the ndmin arguement.
+Example:Create an array with 5 dimensions and verify that it has 5 dimensions:
+
+import numpy as np
+
+arr = np.array([1,2,3,4], ndmin=5)
+
+print(arr)
+print('number of dimensions :', arr.ndmin)
+
+In this array the innermost dimension (5th dim) has 4 elements, 
+
+the 4th dim has 1 element, which can be thought of as the vector.  
+
+The 3rd dim has 1 element that is the martix with the vector, 
+and 2nd dim has one element, this is the 3D array and 1st dim has 1 element that is the 4d array.
+
+
+Numerical Python (numpy) Array Indexing
+
+Access Array Elements
+
+Array indexing is the same as accessing an array element.
+
+You can access an array element by referring to its index number.
+
+The indexes in numpy arrays start with 0, meaning that the first element has index 0, and the second has index 1 and so on.
+
+Example: Get the first element from the the following array, and then the second.
+
+import numpy as np
+
+arr = np.array([1, 2, 3, 4])
+
+print(arr[0])
+print(arr[1])
+
+f
+#Now get the third and fouth elements from the above array and add them.
+
+print(arr[2]+arr[3])
+
+Access 2-D arrays
+
+To access elements from 2-D arrays (matrix arrays), we can use commma seperated integers representing the dimension and the index of the element.
+
+An idea of how indexing works:
+(m,n)
+where
+
+m = [] or [] within the numpy.array
+and 
+n = [k, ..., n] within []
+
+so it's exactly like thinking of matrices in linear algebra. Where m =  
+
+
+Think of 2-D arrays like a table with rows and columns, where the dimension represents the row and the index represents the column.
+
+Example:
+Access the element on the first row, second column.
+Then Access the element on the 2nd row, 5th column.
+
+
+import numpy as np
+
+arr = np.array([[1,2,3,4,5], [6,7,8,9,10]])
+
+print('2nd element for the first row: ',arr[0,1])
+
+#the result
+2nd element on 1st dim:  2
+
+print('5th element on the 2nd row: ', arr[1,4])
+
+#the result
+5th element on the 2nd row: 10
+
+Access 3-D Arrays
+
+To access elements from 3-D arrays we can use comma seperated integers representing the dimensions and the index of the element.
+
+to access elements from 3-D arrays we can use comma separated integers representing the dimensions and index of the element.
+
+Example: Access the third element of the second array of the first array
+
+import numpy as np
+
+arr = np.array([[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]])
+
+print('The 3rd element of the 2nd array or the 1st array: ', arr[0,1,2])
+
+Example Explained 
+
+arr[0,1,2] print the value 6.
+
+And here's why:
+
+The first number represents the first dimension, which contains two arrays:
+[[1, 2, 3], [4, 5, 6]]
+and:
+[[7, 8, 9], [10, 11, 12]]
+
+Since we selected 0, we are left with the first array:
+[[1, 2, 3], [4, 5, 6]]
+
+The second number represents the second dimension, which also contains two arrays:
+[1, 2, 3]
+and:
+[4, 5, 6]
+Since we selected 1, we are left with the second array:
+[4, 5, 6]
+
+The third number represents the third dimension, which contains three values:
+4
+5
+6
+Since we selected 2, we end up with the third value:
+6
+
+Negative Indexing
+Use negative indexing to access an array from the end.
+
+Example: Print the last element from the 2nd dim.
+
+import numpy as np
+
+arr = np.array([1,2,3],[4,5,6])
+
+print('the last element of the 2nd row: ', arr[-1,-1])
+
+
+Numpy Array Slicing
+
+Slicing Arrays
+
+Slicing in Python means taking elements from one given index to to another given index.
+
+We can slice an array instead of indexing like this: [start:end].
+
+We can also define the step like this: [start:end:step]
+
+if start is not defined, the start is automatically set to index[0].
+
+if the end is not defined and start is (or is not), the end is considered to be the nth value (n, or index[-1]) 
+ 
+If step is not defined, then the step is considered 1.
+
+Examples: 
+i) Slice elements from index 1 to index 5 (not including index 5) from the following array.
+ii) Slice elements from index 4 to the end of the array.
+iii) Slice elements from the beginning to index 4 (not included).
+
+import numpy as np
+
+arr = np.array([1,2,3,4,5,6,7])
+
+print(arr[1:5])
+#Note: the result includes the start index, but excludes the end index.
+
+print(arr[4:]
+print(arr[:4]
+
+Negative Slicing
+
+Use the minus operator to refer to an index from the end.
+
+Example: Slice from the index 3 from the end to index 1 from the end.
+
+import numpy as np
+
+arr = np.array([1,2,3,4,5,6,7])
+
+print(arr[-3:-1])
+
+STEP
+
+Use the step value to determine the step of the slicing.
+
+Examples: 
+i)Return every other element from index 1 to index 5(not including 5).
+ii) Return every other element from the entire array.
+
+import numpy as np
+
+arr = np.array([1,2,3,4,5,6,7])
+
+print(arr[1:5:2])
+print(arr[::2])
+
+
+Slicing 2-D Arrays
+
+Examples: 
+i) From the second element, slice elements from the index 1 to index 4 (not including 4).
+ii) From both elements, return index 2 
+iii)From both elements, slice index 1 to index 4 (not included), this will return a 2-D array. 
+
+
+import numpy as np
+
+arr = np.array([1,2,3,4,5],[6,7,8,9,10])
+
+print(arr[1,[1:4]])
+
+Note: Remember that second element has index 1.
+
+print(arr[0:2, 2])
+print(arr[0:2, 1:4])
+
+Numpy Data Types 
+
+Data Types in Python
+
+By default Python have
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
