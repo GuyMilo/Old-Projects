@@ -1,0 +1,1 @@
+selected_char = char1
